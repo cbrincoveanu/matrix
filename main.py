@@ -26,13 +26,15 @@ while True:
         c = (0, 120 + random.randint(0, 120), 0)
         if random.random() < 0.01:
             c = (255, 255, 255)
-        screen.blit(font.render(random.choice(list(CHARS)), True, c),
+        letter = font.render(random.choice(list(CHARS)), True, c)
+        letter = pygame.transform.flip(letter, True, False)
+        screen.blit(letter,
                     (i * COL_SIZE, column * ROW_SIZE))
         columns[i] += 1
         if columns[i] > 30 + random.random() * 2000:
             columns[i] = 0
     s = pygame.Surface((WIDTH, HEIGHT))
-    s.set_alpha(7)
+    s.set_alpha(3)
     s.fill((0, 0, 0))
     screen.blit(s, (0, 0))
     pygame.display.update()

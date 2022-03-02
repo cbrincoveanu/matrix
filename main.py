@@ -38,7 +38,9 @@ while True:
         if columns[i] > 30 + random.random() * 2000:
             columns[i] = 0
     s = pygame.Surface((WIDTH, HEIGHT))
-    s.set_alpha(3)
+    s.set_alpha(7)
     s.fill((0, 0, 0))
     screen.blit(s, (0, 0))
     pygame.display.update()
+    # scaled = pygame.transform.smoothscale(screen, (WIDTH + 1, HEIGHT + 1))
+    # screen.blit(scaled, (-1, -1))
